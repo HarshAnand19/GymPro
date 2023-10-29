@@ -1,0 +1,33 @@
+<app-header></app-header>
+<div class="container mt-5 admin-container">
+  <div class="row">
+    <div class="col-md-4 admin-col-md-4" *ngFor="let slot of slots">
+      <div class="card mb-4 admin-card">
+        <div class="card-header">
+          <h2 class="text-center">{{ slot.slotName }}</h2>
+        </div>
+        <div class="card-body admin-card-body">
+          <p>By {{ slot.trainerName }}</p>
+          <p>Date to Start {{ slot.slotDate }}</p>
+          <p>From {{ slot.startTime }}  To {{ slot.endTime }}</p>
+          <p>Available Seat only {{ slot.personsAllowed }}</p>
+          <br>
+          <div class="d-flex justify-content-between align-items-center">
+            <button type="button" class="admin-btn-update" (click)="openUpdateModal(slot)">
+              <i class="fa fa-pencil" aria-hidden="true"></i> <!-- Update icon -->
+            </button>
+            <button type="button" class="admin-btn-delete" (click)="confirmDeleteSlot(slot.slotId)">
+              <i class="fa fa-trash"></i> <!-- Delete icon -->
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-update-slot-modal
+  #updateSlotModal
+  [slot]="selectedSlot"
+  (updateSlot)="updateSlot($event)"
+></app-update-slot-modal>

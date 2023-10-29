@@ -1,0 +1,166 @@
+/* Add custom styles for slot cards */
+.card {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly opaque white background */
+  }
+  
+  .card-header {
+    background-color: #007bff; /* Blue header background color */
+    color: #fff; /* White header text color */
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    padding: 15px;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .btn-primary {
+    background-color: #006400;
+    border-color: #10a075;
+    border-radius: 30px;
+    padding: 12px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #8bc412;
+  }
+  
+  .btn-primary:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Add custom styles for spacing between columns */
+  .col-md-4 {
+    margin-bottom: 20px;
+  }
+  
+  /* Container for the card */
+.card {
+  width: 300px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  margin: 20px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: perspective(1000px) rotateY(0deg);
+}
+
+/* Trainer's Name */
+.card p:nth-child(1) {
+  font-size: 24px;
+  font-weight: bold;
+  color: #3498db;
+  margin-bottom: 10px;
+}
+
+/* Date */
+.card p:nth-child(2) {
+  font-size: 18px;
+  color: #2ecc71;
+  margin-bottom: 5px;
+}
+
+/* Time */
+.card p:nth-child(3) {
+  font-size: 18px;
+  color: #e67e22;
+  margin-bottom: 5px;
+}
+
+/* Persons Allowed */
+.card p:nth-child(4) {
+  font-size: 18px;
+  color: #e74c3c;
+  margin-bottom: 0;
+}
+.card p {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 10px;
+  transform-style: preserve-3d;
+  transform: translateZ(10px);
+}
+/* Trainer's Name */
+.card p:nth-child(1) {
+  font-size: 24px;
+  font-weight: bold;
+  
+}
+
+/* Hover effect 
+.card:hover p {
+  transform: translateZ(20px);
+}*/
+.card:hover {
+  transform: scale(1.1); /* Increase the scale on hover */
+}
+
+
+/* CSS for Eye-Catching Header */
+.card-header {
+  background-color: #3498db; /* Background color */
+  padding: 20px; /* Add padding for spacing */
+  border-radius: 10px; /* Rounded corners for a modern look */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+h2.text-center {
+  color: #ffffff; /* Text color */
+  font-size: 2rem; /* Font size */
+  text-transform: uppercase; /* Uppercase text */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a shadow to the text */
+}
+
+/* Hover effect for extra interactivity */
+.card-header:hover {
+  background-color: #3498db; /* Change background color on hover */
+  transition: background-color 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* slot-book.component.css */
+
+/* Style the "Book Slot" button */
+.book-button {
+  background-color: #4CAF50; /* Green background color */
+  color: white; /* White text color */
+  border: none; /* Remove button border */
+  padding: 12px 24px; /* Add padding to the button */
+  border-radius: 4px; /* Rounded corners */
+  text-align: center; /* Center text horizontally */
+  text-decoration: none; /* Remove underlines from links */
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px; /* Add some margin around the button */
+  cursor: pointer; /* Show a pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for the button */
+.book-button:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Optional: Add a shadow to the button */
+.book-button:focus {
+  box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Optional: Style the button when it's disabled */
+.book-button:disabled {
+  background-color: #ccc; /* Grayed out when disabled */
+  cursor: not-allowed; /* Show "not allowed" cursor */
+}
+

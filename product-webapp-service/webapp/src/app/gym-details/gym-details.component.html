@@ -1,0 +1,70 @@
+<app-header></app-header>
+<app-gym-data></app-gym-data>
+
+<div style="display: inline-flex;margin-top:30px; padding:10px;text-align:center; width:80%;">
+  <div class="container-1" style="margin-left: 50px;">
+    <div class="row">
+      <div class="col-md-8" *ngFor="let gym of gymDetails">
+        <div class="card-body">
+          <img src="data:image/png;base64,{{ gym.gymPic }}" alt="Gym Image" class="gymprofilepic">
+          <div style="text-align: center;">
+            <button (click)="updateProfilePicture(gym.gymId)" class="bi bi-pencil"> Update Profile Pic</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <p></p>
+    <h1></h1>
+  </div>
+
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8" *ngFor="let gym of gymDetails">
+        <div class="card-body">
+          <h3 class="card-title"><i class="bi bi-buildings"></i><strong>  {{ gym.gymName }}</strong></h3>
+          <!-- <p class="card-text"><strong>Id </strong> {{ gym.gymId }}</p> -->
+          <p class="card-text"><strong><i class="bi bi-geo-alt"></i> </strong>   {{ gym.gymAddress }}</p>
+          <p class="card-text"><strong><i class="bi bi-telephone"></i> </strong>   {{ gym.gymPhone }}</p>
+          <p class="card-text"><strong><i class="bi bi-envelope"></i> </strong>   {{ gym.gymEmail }}</p>
+          <!-- Address
+          Phone
+          Email -->
+
+          <button (click)="toggleUpdateForm()" class="bi bi-pencil"> Update Details </button>
+        </div>
+        <div *ngIf="showUpdateForm" class="fformdiv">
+          <div class="sformdiv">
+            <div class="tformdiv">
+              <div class="foformdiv" *ngFor="let gym of gymDetails">
+                <div class="fiformdiv">
+                  <form (ngSubmit)="updateGymDetails(gym)" #gymForm="ngForm">
+                    <label for="gymName">Name:</label>
+                    <input type="text" id="gymName" [(ngModel)]="gym.gymName" name="gymName" value="yourName" required>
+
+                    <label for="gymAddress">Address:</label>
+                    <input type="text" id="gymAddress" [(ngModel)]="gym.gymAddress" name="gymAddress" required>
+
+                    <label for="gymPhone">Phone:</label>
+                    <input type="text" id="gymPhone" [(ngModel)]="gym.gymPhone" name="gymPhone" required>
+
+                    <label for="gymEmail">Email:</label>
+                    <input type="email" id="gymEmail" [(ngModel)]="gym.gymEmail" name="gymEmail" required>
+
+                    <button type="submit" [disabled]="!gymForm.valid">Update</button>
+
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

@@ -1,0 +1,224 @@
+version: "3"
+services:
+
+  mysql:
+    container_name: mysql
+    image: mysql:8.1.0
+    ports:
+      - "3307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: hacker201
+    networks:
+      gympro-net:
+
+  mongodb:
+    container_name: mongodb
+    image: mongo:latest
+    ports:
+      - "27018:27017"
+    volumes:
+      - /usr/local/mongodb:/gympro
+    networks:
+      gympro-net:
+
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.0.1
+    container_name: zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+      ZOOKEEPER_TICK_TIME: 2000
+    networks:
+      gympro-net:
+
+  kafka:
+    image: confluentinc/cp-kafka:7.0.1
+    container_name: kafka
+    restart: always
+    ports:
+      - "9092:9092"
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: 'zookeeper:2181'
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_INTERNAL:PLAINTEXT
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092,PLAINTEXT_INTERNAL://kafka:29092
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+    networks:
+      gympro-net:
+
+
+  api-gateway:
+    container_name: api-gateway
+    build: api-gateway/
+    restart: always
+    ports:
+      - "8006:8006"
+    depends_on:
+      - eureka-server
+    environment:
+      - spring.profiles.active=docker
+    networks:
+      gympro-net:
+
+
+  admin-service:
+    container_name: admin-service
+    build: admin-service/
+    restart: always
+    ports:
+      - "8001:8001"
+    depends_on:
+     - mongodb
+     - eureka-server
+     - api-gateway
+    environment:
+      - spring.profiles.active=docker
+    networks:
+      gympro-net:
+
+
+  eureka-server:
+    container_name: eureka-server
+    build: Spring-Cloud/
+    restart: always
+    ports:
+      - "8761:8761"
+    networks:
+      gympro-net:
+
+
+  notification-service:
+    container_name: notification-service
+    build: notification-service/
+    restart: always
+    ports:
+      - "8019:8019"
+    depends_on:
+      - mongodb
+      - eureka-server
+      - api-gateway
+    environment:
+      - spring.profiles.active=docker
+    networks:
+      gympro-net:
+
+
+  chatting-service:
+    container_name: chatting-service
+    build: chatting-service/
+    restart: always
+    ports:
+      - "8003:8003"
+    environment:
+      - spring.profiles.active=docker
+    depends_on:
+       - eureka-server
+       - api-gateway
+       - mongodb
+    networks:
+      gympro-net:
+
+
+  event-service:
+    container_name: event-service
+    build: event-service/
+    restart: always
+    ports:
+      - "8016:8016"
+    depends_on:
+      - mongodb
+      - eureka-server
+      - api-gateway
+    environment:
+      - spring.profiles.active=docker
+    networks:
+      gympro-net:
+
+
+  payment-service:
+    container_name: payment-service
+    build:
+      context: ./payment-service
+      dockerfile: Dockerfile
+    ports:
+      - "8015:8015"
+    depends_on:
+      - mysql
+      - eureka-server
+      - api-gateway
+    environment:
+      - spring.profiles.active=docker
+    networks:
+      gympro-net:
+    restart: on-failure
+
+  product-webapp-service:
+    container_name: product-webapp-service
+    build: product-webapp-service/
+    ports:
+      - "8020:8020"
+    depends_on:
+       - eureka-server
+       - api-gateway
+    restart: on-failure
+    environment:
+      - spring.profiles.active=docker
+    networks:
+      gympro-net:
+
+
+  registration:
+    container_name: registration
+    build: Registration/
+    restart: always
+    ports:
+      - "8082:8082"
+    depends_on:
+      - mongodb
+      - kafka
+      - eureka-server
+      - api-gateway
+    environment:
+      - spring.profiles.active=docker
+    networks:
+      gympro-net:
+
+
+  login-service:
+    container_name: login-service
+    build: login-service/
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongodb
+      - eureka-server
+      - api-gateway
+      - kafka
+    environment:
+      - spring.profiles.active=docker
+    networks:
+      gympro-net:
+    restart: on-failure
+
+  feedback-service:
+    container_name: feedback-service
+    build: feedback-service/
+    ports:
+      - "8007:8007"
+    depends_on:
+      - mongodb
+      - eureka-server
+      - api-gateway
+    environment:
+      - spring.profiles.active=docker
+    networks:
+      gympro-net:
+    restart: on-failure  
+
+networks:
+  gympro-net:

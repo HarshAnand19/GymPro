@@ -1,0 +1,72 @@
+/*footer*/
+.footer {
+    background-color: #121e2d;
+    color: #fff;
+    margin-top: -1vw;
+  }
+  
+  .footer h3 {
+    color: #fff;
+  }
+  
+  .footer p {
+    margin: 5px 0;
+  }
+  
+.news_letter{
+    color: rgb(255, 187, 0);
+    font-family: 'Big Shoulders Stencil Display', cursive, 'Londrina Solid', cursive;
+}
+
+.newsletter__text{
+    font-family: 'Big Shoulders Stencil Display', cursive, 'Londrina Solid', cursive;
+}
+.contactus_text {
+    display: inline-block;
+    color: rgb(255, 187, 0);
+    font-family: 'Big Shoulders Stencil Display', cursive, 'Londrina Solid', cursive;
+}
+
+.contactus_section {
+    border-bottom: 4px solid rgb(255, 187, 0); /* Add a thicker line below the "Contact Us" section */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+.gympro_text{
+    font-family: 'Big Shoulders Stencil Display', cursive, 'Londrina Solid', cursive;
+}
+.quicklinks_text{
+    font-family: 'Big Shoulders Stencil Display', cursive, 'Londrina Solid', cursive;
+}
+.send-button{
+    background: transparent;
+    border: none; 
+    padding: 0;
+    cursor: pointer; 
+}
+.link{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+/*footer*/
+
+/* Style for the star ratings */
+.star-rating {
+    font-size: 24px; /* Adjust the font size as needed */
+    color: gold; /* Star color */
+  }
+  
+  .star {
+    display: inline-block;
+    margin-right: 5px; /* Spacing between stars */
+  }
+  
+  .filled {
+    color: gold; /* Filled star color */
+  }
+  
+  
+
+
+

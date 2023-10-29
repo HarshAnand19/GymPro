@@ -1,0 +1,170 @@
+/* Navbar styles */
+.navbar {
+    font-family: 'Big Shoulders Stencil Display', cursive;
+}
+
+.navbar-light {
+    background-color: #1F2833;
+    border-top: 4px solid rgb(255, 187, 0);
+    z-index: 1;
+}
+
+.navbar-toggler {
+    color: rgb(255, 187, 0);
+    background-color:rgb(255, 187, 0);
+}
+
+/* Navbar brand logo */
+.navbar-brand img {
+    margin-bottom: 35%;
+    border-radius: 50%; /* This creates a circular shape */
+
+}
+
+.rounded-circle {
+    border-radius: 50%; /* This creates a circular shape */
+}
+
+/* Navbar brand text */
+.navbar-brand a {
+    color: rgb(255, 187, 0);
+}
+
+/* Navbar user information */
+.navbar-nav li h3 {
+    color: rgb(255, 187, 0);
+}
+
+/* Navbar buttons */
+.navbar-nav li button {
+    color: rgb(255, 187, 0);
+    font-size: 100%;
+    font-family: 'Big Shoulders Stencil Display', cursive, 'Londrina Solid', cursive;
+}
+
+/* Adjust margin for navbar items */
+.navbar-nav li {
+    margin-right: 1vh;
+}
+
+.nav-item{
+    color: rgb(255, 187, 0);
+    font-size: 100%;
+    font-family: 'Big Shoulders Stencil Display', cursive; font-family: 'Londrina Solid', cursive;
+}
+.blue-dropdown .dropdown-menu {
+    background-color: #539af0; 
+  }
+  
+  /* CSS for Header with Sidebar */
+.header-with-sidebar {
+    display: flex; /* Use flexbox to create a horizontal layout */
+  }
+  
+  .sidebar {
+    width: 250px; /* Set the width of the sidebar */
+    background-color: #333; /* Sidebar background color */
+    color: #fff; /* Sidebar text color */
+    padding: 20px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    margin-bottom: 10px;
+  }
+  
+  .header-content {
+    flex-grow: 1; /* Allow the header content to grow and fill available space */
+    padding: 20px;
+  }
+  
+ /* sidenav.component.css */
+
+/* Sidebar */
+#sidebar {
+    height: 100%;
+    width: 250px;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #333;
+    transition: left 0.3s ease-in-out;
+    z-index: 1;
+  }
+  
+  #sidebar.active {
+    left: 0;
+  }
+  
+  /* Sidebar Header */
+  #sidebar .sidebar-header {
+    padding: 20px;
+    text-align: center;
+    background-color: #222;
+  }
+  
+  #sidebar .sidebar-header h3 {
+    color: white;
+  }
+  
+  /* Sidebar Links */
+  #sidebar ul.components {
+    padding: 20px 0;
+  }
+  
+  #sidebar ul li {
+    padding: 10px;
+  }
+  
+  #sidebar ul li a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  /* Main Content */
+  #content {
+    width: 100%;
+    padding: 15px;
+    transition: margin-left 0.3s ease-in-out;
+  }
+  
+  /* Toggle button */
+  #sidebarCollapse {
+    background-color: #333;
+    border: none;
+    color: white;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+  }
+  
+   /* Custom styles to remove background color and arrow */
+.custom-dropdown {
+    background-color: #1F2833;
+    border: none !important;
+  }
+  
+  .dropdown-toggle::after {
+    content: none !important;
+  }
+  .menu-select .dropdown-toggle::before {
+    background-color: transparent;
+  }
+  
+  /* Custom styles to change text color of dropdown items */
+.custom-dropdown .dropdown-item {
+    color: white;
+  }
+  .custom-dropdown .dropdown-item:hover {
+    color: #4e6887;
+  }
+.userDropdown{
+    background-color: transparent;
+}
+  

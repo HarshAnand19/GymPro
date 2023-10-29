@@ -1,0 +1,31 @@
+<div class="competition-list">
+  <div class="header">
+    
+  <h2> <b>Participated Competitions</b></h2>
+
+</div>
+  <ul>
+    <li *ngFor="let competition of competitions">
+      <div class=" cart">
+        <p>
+       Eventdate:- {{ competition.eventDate}}
+      </p>
+        <p>
+         Eventname:- {{ competition.eventName }}
+        </p>
+        <p> 
+         Eventdetails:- {{ competition.eventDetails }}
+        </p>
+        <p>
+       EventLocation:- {{competition.eventLocation}} 
+        </p>
+        <p>
+          registrationBeginsDate:-{{competition.registrationBeginsDate}}
+        </p>
+        <p>
+        registrationEndsDate:- {{competition.registrationEndsDate}}
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>

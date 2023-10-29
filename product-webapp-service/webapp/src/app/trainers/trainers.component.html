@@ -1,0 +1,88 @@
+<app-gym-data></app-gym-data>
+<!-- ================================================================= -->
+<div style="padding-top: 10px; padding-left:45%; text-align:center;">
+  <button class="nav-link" (click)="toggleForm()">Add Trainer</button>
+</div>
+
+<div class="formdiv" style="padding-left: 40%;">
+  <div class="container" *ngIf="showForm">
+    <!-- <h2 style="text-align: center;">Add Trainer</h2> -->
+    <form (submit)="addTrainer(this.trainerData)" class="formdiv">
+      <div class="form-group">
+        <label for="trainerName">Trainer Name</label>
+        <input type="text" id="trainerName" class="form-control" [(ngModel)]="trainerData.trainerName" name="trainerName" required>
+      </div>
+      <div class="form-group">
+        <label for="trainerAddress">Trainer Address</label>
+        <input type="text" id="trainerAddress" class="form-control" [(ngModel)]="trainerData.trainerAddress" name="trainerAddress" required>
+      </div>
+      <div class="form-group">
+        <label for="trainerPhone">Trainer Phone</label>
+        <input type="text" id="trainerPhone" class="form-control" [(ngModel)]="trainerData.trainerPhone" name="trainerPhone" required>
+      </div>
+      <div class="form-group">
+        <label for="slotId">Slot ID</label>
+        <input type="text" id="slotId" class="form-control" [(ngModel)]="trainerData.slotId" name="slotId" required>
+      </div>
+      <div class="form-group" style="text-align: center;">
+        <button type="submit" class="btn btn-primary">Add Trainer</button>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- =========================================== -->
+<div>
+  <div class="container">
+  <div class="row" >
+    <div class="col-md-8" *ngFor="let gym of trainers; let i=index" >
+      <div class="card-body" >
+        <div>
+          <h3 class="card-title"><strong><i class="bi bi-person"></i>  {{ gym.trainerName }}</strong></h3>
+          <p class="card-text"><strong><i class="bi bi-geo-alt"></i> </strong> {{ gym.trainerAddress }}</p>
+          <p class="card-text"><strong><i class="bi bi-telephone"></i> </strong> {{ gym.trainerPhone }}</p>
+          <p class="card-text"><strong><i class="bi bi-calendar"></i> </strong> {{ gym.slotId }}</p>
+          <div style="display: inline-flex;">
+            <button (click)="toggleUpdateForm(i)"><i class="bi bi-pencil"></i> Update Trainer</button>
+            <span style="margin-left: 10px;"></span>
+            <button (click)="DeleteTrainer(gym.trainerId)"><i class="bi bi-trash"></i> Delete</button>
+          </div>
+        </div>
+        
+
+        <!-- trainerId;
+         Name:
+        Address:
+      Phone:
+    Slot Id:  -->
+   
+
+        <div *ngIf="gym.showUpdateForm">
+          <form (submit)="editTrainerDetails(i,gym)">
+            <label for="updateName">Name:</label>
+            <input type="text" id="updateName" [(ngModel)]="gym.trainerName" name="updatedName" required>
+
+            <label for="updateDetail">Address:</label>
+            <input type="text" id="updateAddress" [(ngModel)]="gym.trainerAddress" name="updatedDetail" required>
+
+            <label for="updateStatus">Phone:</label>
+            <input type="text" id="updateStatus" [(ngModel)]="gym.trainerPhone" name="updatedStatus" required>
+
+            <label for="updateSlot">Slot Id:</label>
+            <input type="text" id="updateSlot" [(ngModel)]="gym.slotId" name="updatedSlot" required>
+
+            <button type="submit">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+
+
+<router-outlet></router-outlet>

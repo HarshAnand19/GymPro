@@ -1,0 +1,116 @@
+
+
+<!-- <div
+style="font-family: 'Big Shoulders Stencil Display', cursive;
+font-family: 'Londrina Solid', cursive; border-radius: 12px; padding-left: 2vh; padding-right: 2vh;">
+
+<h1 class="text-center">Subscription Plans</h1>
+<hr style="height: 2px; margin: 1%;padding: 0;">
+<div class="row row-cols-1 row-cols-md-3 g-1"> -->
+  
+<!-- Basic Plan -->
+<!-- <div class="col">
+  <div class="card shadow-lg" style="margin: 2vh;">
+    <img src="assets\gymimage\normalplan.jpg" class="card-img-top" alt="..."
+      style="max-width: 23.5vh; padding-top: 1vh; align-self: center;">
+    <div class="card-body">
+      <div style="background-color: #1F2833; color: aqua; border-radius: 4px;">
+        <h4 class="card-title" style="text-align: center;">{{ pac.gyM }}</h4>
+      </div>
+
+      <p class="card-text" [innerHTML]="pac.gymNa"></p>
+
+      <div class="d-flex justify-content-center"> 
+        <h5 class="card-basic" style="text-align: center; padding: .4vh; border-radius: 4px;"> Price :&#8377;{{pac.basicprice}}</h5>
+      </div>
+    </div>
+    <button type="button" class="btn btn-info buy-button" (click)="pac.gymBuy()">BUY</button>
+  </div>
+</div> -->
+
+
+
+  <!-- Pro Plan -->
+  <!-- <div class="col">
+    <div class="card shadow-lg" style="margin: 2vh;">
+      <img src="assets\gymimage\proplan.jpg" class="card-img-top" alt="..."
+        style="max-width: 20vh; align-self: center; padding-top: 3vh; padding-bottom: 1vh;">
+      <div class="card-body">
+        <div style="background-color: #1F2833; color: white; border-radius: 5px;">
+          <h4 class="card-title" style=" text-align: center;">{{pac.crossFi}}</h4>
+        </div>
+        <p class="card-text" [innerHTML]="pac.crossFitness"></p>
+        <div class="d-flex justify-content-center">
+          <h5 class="card-basic" style="text-align: center; padding: .4vh; border-radius: 4px;"> Price :&#8377;{{pac.proprice}}</h5>
+          </div>
+      </div><button type="button" class="btn btn-info"
+        (click)="pac.crossBuy()">BUY</button>
+    </div>
+  </div> -->
+
+  <!-- Elite Plan -->
+  <!-- <div class="col">
+    <div class="card shadow-lg" style="margin: 2vh;">
+      <img src="assets\gymimage\eliteplan.jpg" class="card-img-top" alt="..."
+        style="max-width: 25vh; align-self: center;">
+      <div class="card-body">
+        <div style="background-color: #1F2833; color: gold; border-radius: 5px;">
+          <h4 class="card-title" style=" text-align: center;">{{pac.kickBo}}</h4>
+        </div>
+        <p class="card-text" [innerHTML]="pac.kickBoxing"></p>
+        <div class="d-flex justify-content-center">
+          <h5 class="card-basic" style="text-align: center; padding: .4vh; border-radius: 4px;"> Price :&#8377;{{pac.eliteprice}}</h5>
+          </div>
+      </div><button type="button" class="btn btn-info"
+        (click)="pac.kickBuy()">BUY</button>
+    </div>
+  </div>
+</div>
+</div> -->
+
+
+<h1 class="subs_plans_text" style="color: gold;">Subscription Plans</h1>
+<hr style="height: 2px; margin: 1%;padding: 0;">
+
+
+<!-- <p style="color: black;"><strong>User Email:</strong> {{ userEmail }}</p>
+<p style="color: black;"><strong>Name:</strong> {{ firstName }}</p>
+<p style="color: black;"><strong>Phone :</strong> {{ phone }}</p> -->
+
+<!-- subscription-list.component.html -->
+<div class="row row-cols-1 row-cols-md-3 g-1" style="height:auto">
+  <div class="col" *ngFor="let subscription of subscriptions">
+    <div class="card shadow-lg" style="margin: 2vh;">
+      <h4 class="card-title">{{ subscription.subscriptionName }}</h4><br>
+      <h5 style="margin-left: 20px; font-family: 'Big Shoulders Stencil Display', cursive; ;
+      font-family: 'Londrina Solid', cursive; border-radius: 12px; padding-left: 2vh; padding-right: 2vh;font-weight: bold;">Plan Benefits :</h5>
+      <ul class="card-text" style="margin-left: 20px;"> 
+        <li *ngFor="let detail of subscription.subscriptionDetails">
+          {{ detail.point }}
+        </li>
+      </ul><br>      
+
+      <h5 class="card-basic" style="text-align: center; padding: .4vh; border-radius: 4px;"> Price :&#8377;{{ subscription.subscriptionPrice }}</h5>
+      
+      <!-- <button type="button" class="btn btn-info buy-button" 
+      style="font-family: 'Big Shoulders Stencil Display', cursive;font-family: 'Londrina Solid', cursive; border-radius: 12px; padding-left: 2" 
+      (click)="Buy(subscription)">BUY</button>    -->
+
+      <!-- <button type="button" class="btn btn-info buy-button" 
+        style="font-family: 'Big Shoulders Stencil Display', cursive; font-family: 'Londrina Solid', cursive; border-radius: 12px; padding-left: 2" 
+        (click)="Buy(subscription)"
+        [routerLink]="['/payment']"
+        [queryParams]="{ 
+          userEmail: userEmail,
+          firstName: firstName,
+          phone: phone
+        }">BUY</button> -->
+        
+        <button type="button" class="btn btn-info buy-button"   (click)="Buy(subscription)">BUY</button>
+
+    </div>
+  </div>
+</div>
+
+
+

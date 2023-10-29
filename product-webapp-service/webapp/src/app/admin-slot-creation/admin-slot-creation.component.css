@@ -1,0 +1,143 @@
+.container {
+    max-width: 500px;
+    max-height: fit-content;
+    background-color: rgba(255, 255, 255, 0.0); /* Semi-transparent white background for content */
+    padding: 20px;
+    
+    
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.0); /* Add a subtle shadow */
+  }
+  
+  .card {
+    
+    border:#007bff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white background for the card */
+
+  }
+  
+  .card-header {
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  .card-body {
+    padding: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+  }
+  
+  label {
+    font-weight: bold;
+    font-size: large;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 3px;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+
+  /* Custom styles for the "Create Slot" button */
+.text-center button[type="submit"] {
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    border: none; /* No border */
+    border-radius: 30px; /* Round corners */
+    padding: 15px 30px; /* Increase padding for a larger button */
+    font-size: 18px; /* Increase font size */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Hover effect - Darken the button and add a slight scale effect */
+  .text-center button[type="submit"]:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight scale increase on hover */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  }
+  
+  /* Active effect - Slightly darken the button when clicked */
+  .text-center button[type="submit"]:active {
+    background-color: #00419e; /* Darker blue on active state */
+    transform: scale(0.95); /* Slight scale decrease when clicked */
+  }
+/* Custom styles for form input fields */
+.form-control {
+    background-color: #f8f9fa; /* Light gray background */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding around the input */
+    font-size: 16px; /* Font size */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Hover effect - Slightly darken the input field on hover */
+  .form-control:hover {
+    background-color: #e2e6ea; /* Darker gray on hover */
+  }
+  
+  /* Focus effect - Change the input field border color on focus */
+  .form-control:focus {
+    outline: none;
+    border-color: #007bff; /* Blue border color on focus */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow on focus */
+  }
+/* Custom styles for form input fields */
+.form-control {
+    background-color: #f8f9fa; /* Light gray background */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding around the input */
+    font-size: 16px; /* Font size */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  /* Hover effect - Slightly darken the input field on hover */
+  .form-control:hover {
+    background-color: #e2e6ea; /* Darker gray on hover */
+  }
+  
+  /* Focus effect - Change the input field border color on focus */
+  .form-control:focus {
+    outline: none;
+    border-color: #007bff; /* Blue border color on focus */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Slight shadow on focus */
+  }
+/* Custom styles for the card header */
+.card-header {
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    text-align: center; /* Center-align the text */
+    border-radius: 10px 10px 0 0; /* Round the top corners */
+    padding: 15px; /* Padding around the header */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  }
+  
+  /* Style the header text */
+  .card-header h2 {
+    font-size: 24px; /* Font size */
+    margin: 0; /* Remove margin to ensure center alignment */
+  }
+
+  
+
+  

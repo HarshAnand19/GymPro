@@ -1,0 +1,179 @@
+<!--Header For Users-->
+<div *ngIf="user && user.role === 'user'" style="font-family: 'Big Shoulders Stencil Display', cursive; font-family: 'Londrina Solid', cursive;">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #1F2833; border-top: 4px solid rgb(255, 187, 0); z-index: 1;">
+    <div class="container-fluid">
+
+      <!-- Drop-Down-Menu -->
+        <div class="menu-select">
+          <i class="fas fa-user"></i>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle bg-transparent border-0" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="assets/social/menu-bar.png" alt="User Image" width="40" height="40">
+            </button>
+                     
+            <ul class="dropdown-menu blue-dropdown custom-dropdown" aria-labelledby="userDropdown">
+              <li><a class="dropdown-item">Update Profile</a></li>  
+
+              <li><hr class="dropdown-divider" style="background-color: wheat;"></li>
+              <li><a routerLink="/user-slot-booking" class="dropdown-item">Book a slot </a></li>
+
+              <li><hr class="dropdown-divider" style="background-color: wheat;"></li>
+              <li><a routerLink="/event-list"class="dropdown-item">Events</a></li>
+
+              <li><hr class="dropdown-divider" style="background-color: wheat;"></li>
+              <li><a routerLink="/slot-booked" class="dropdown-item">My booked slots</a></li>
+
+              <li><hr class="dropdown-divider" style="background-color: wheat;"></li>
+              <li><a routerLink="/users" class="dropdown-item">Chat with admin</a></li>
+
+              <!-- <li>
+                <hr class="dropdown-divider" style="background-color: wheat;">
+                <a class="dropdown-item" href="/feedback">Feedback</a>
+              </li> -->
+              
+              <li><hr class="dropdown-divider" style="background-color: wheat;"></li>
+              <li><a routerLink="/" class="dropdown-item" (click)="logout()">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+          <a class="navbar-brand">
+              <img src="assets/gymimage/logo.jpeg" alt="" width="70" height="60" style="margin-bottom: 35%; margin-top: 10px;">
+          </a>
+          <a class="navbar-brand" style="color: rgb(255, 187, 0);">
+              <h1 style="font-family: 'Big Shoulders Stencil Display', cursive;">GymPro</h1>
+          </a>
+          <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+            <h2 style="color: white;">Welcome {{ user.firstName }}</h2>
+        </div>
+        
+          <button class="navbar-toggler" type="button" style="color:rgb(255, 187, 0);" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation" style="background-color: rgb(255, 187, 0);">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+              <!-- Use Bootstrap classes to move the navbar items to the right -->
+              <ul class="navbar-nav ms-auto mb-lg-0">
+                  <li class="nav-item" style="margin-right: 1vh;">
+                      <button class="btn btn-outline-info">Home</button>
+                  </li>
+                  <!-- <li class="nav-item" style="margin-right: 1vh;">
+                      <button class="btn btn-outline-info"
+                          [routerLink]="['/subscription-service']"
+                          [queryParams]="{ firstName: user.firstName, 
+                              email: user.email, 
+                              phone: user.phone }"
+                      >Subscription</button>
+                  </li> -->
+                  <div class="dropdown">
+                    <button class="btn btn-outline-info dropdown-toggle" type="button" id="subscriptionDropdown" data-bs-toggle="dropdown" aria-expanded="false" style="color: rgb(255, 187, 0);;">
+                      Subscription
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="subscriptionDropdown">
+                      <li><a class="dropdown-item"   [routerLink]="['/subscription-service']"
+                        [queryParams]="{ firstName: user.firstName, 
+                            email: user.email, 
+                            phone: user.phone }">Buy a Plan</a>
+                          </li>
+
+                          <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item">Your current Plan : {{user.subscriptionPlan}}</a></li>
+                    </ul>
+                  </div>
+
+                  <li class="nav-item" style="margin-right: 1vh;">
+                      <button class="btn btn-outline-info">Profile</button>
+                  </li>
+                  <div class="user-menu">
+                      <i class="fas fa-user"></i>
+                      <div class="dropdown">
+                          <button class="btn btn-secondary dropdown-toggle" type="button" id="userDropdown"
+                              data-bs-toggle="dropdown" aria-expanded="false">
+                              <img src="assets/gymimage/personicoon.png" alt="User Image" width="30" height="25">
+                          </button>
+                          <ul class="dropdown-menu dropdown-menu-end blue-dropdown" aria-labelledby="userDropdown">
+                              <li><a class="dropdown-item">{{ user.email }}</a></li>
+                              <li><hr class="dropdown-divider"></li>
+                              <li><a class="dropdown-item" (click)="logout()">Logout</a></li>
+                          </ul>
+                      </div>
+                  </div>                 
+              </ul>
+          </div>
+      </div>
+  </nav>
+</div>
+
+
+
+
+
+<!--Header For Admin-->
+<div *ngIf="user && user.role === 'admin'" style="font-family: 'Big Shoulders Stencil Display', cursive; font-family: 'Londrina Solid', cursive;">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #1F2833; border-top: 4px solid rgb(255, 187, 0); z-index: 1;">
+    <div class="container-fluid">
+
+      <!-- Drop-Down-Menu -->
+        <div class="menu-select">
+          <i class="fas fa-user"></i>
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle bg-transparent border-0" type="button" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="assets/social/menu-bar.png" alt="User Image" width="40" height="40">
+            </button>
+            
+            
+            <ul class="dropdown-menu blue-dropdown custom-dropdown" aria-labelledby="userDropdown">
+              <li><a routerLink="/gymdata" class="dropdown-item">Update Gym Details</a></li>  
+
+              <li><hr class="dropdown-divider" style="background-color: wheat;"></li>
+              <li><a routerLink="/admin/slotCreation" class="dropdown-item">Create slots </a></li>
+
+              <li><hr class="dropdown-divider" style="background-color: wheat;"></li>
+              <li><a routerLink="/admin/slotPanel" class="dropdown-item">Slots Panel</a></li>
+
+              <li><hr class="dropdown-divider" style="background-color: wheat;"></li>
+              <li><a routerLink="/event-register" class="dropdown-item">Create Events</a></li>
+
+              <li><hr class="dropdown-divider" style="background-color: wheat;"></li>
+              <li><a routerLink="/users" class="dropdown-item">Resolve Queries</a></li>
+
+              <li><hr class="dropdown-divider" style="background-color: wheat;"></li>
+              <li><a class="dropdown-item">Logout</a></li>
+            </ul>
+          </div>
+        </div>
+        
+          <a class="navbar-brand">
+              <img src="assets/gymimage/logo.jpeg" alt="" width="70" height="60" style="margin-bottom: 35%; margin-top: 10px;">
+          </a>
+          <a class="navbar-brand" style="color: rgb(255, 187, 0);">
+              <h1 style="font-family: 'Big Shoulders Stencil Display', cursive;">GymPro</h1>
+          </a>
+        
+          <button class="navbar-toggler" type="button" style="color:rgb(255, 187, 0);" data-bs-toggle="collapse"
+              data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+              aria-label="Toggle navigation" style="background-color: rgb(255, 187, 0);">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+              <!-- Use Bootstrap classes to move the navbar items to the right -->
+              <ul class="navbar-nav ms-auto mb-lg-0">
+                  <li class="nav-item" style="margin-right: 1vh;">
+                      <button routerLink="'/home-service', userEmail" class="btn btn-outline-info">Home</button>
+                  </li>
+
+                  <li class="nav-item" style="margin-right: 1vh;">
+                      <button class="btn btn-outline-info">Profile</button>
+                  </li>
+                  <div class="user-menu">
+                      <i class="fas fa-user"></i>
+                     
+                  </div>                 
+              </ul>
+          </div>
+      </div>
+  </nav>
+</div>
+

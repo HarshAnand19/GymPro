@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="container">
+  <h2>Register Event</h2>
+  <form [formGroup]="eventForm" (submit)="createEvent()">
+    <div class="form-group">
+      <label for="eventName"><strong>Event Name</strong></label>
+      <input type="text" id="eventName" formControlName="eventName" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="eventDate"><strong>Event Date</strong></label>
+      <input type="date" id="eventDate" formControlName="eventDate" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="eventLocation"><strong>Event Location</strong></label>
+      <input type="text" id="eventLocation" formControlName="eventLocation" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="eventDetails"><strong>Event Details</strong></label>
+      <textarea id="eventDetails" formControlName="eventDetails" class="form-control" required></textarea>
+    </div>
+    <br>
+    <div class="form-group">
+      <label for="registrationBeginsDate"><strong>Registration Begins Date</strong></label>
+      <input type="date" id="registrationBeginsDate" formControlName="registrationBeginsDate" class="form-control" required>
+    </div>
+    <div class="form-group">
+      <label for="registrationEndsDate"><strong>Registration Ends Date</strong></label>
+      <input type="date" id="registrationEndsDate" formControlName="registrationEndsDate" class="form-control" required>
+    </div>
+    <div *ngIf="eventForm.hasError('dateError')" class="text-danger">
+      <strong>Registration dates cannot be greater than the event date.</strong>
+    </div>
+    <div>
+      <button class="event-register__register-button" [disabled]="eventForm.invalid">Register</button>
+    </div>
+  </form>
+</div>

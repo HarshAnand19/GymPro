@@ -1,0 +1,39 @@
+<div *ngIf="property">
+    <div class="container mt-4">
+      <div class="row">
+        <!-- Profile Picture Column -->
+        <div class="col-md-4">
+          <div class="text-center">
+            <div class="profile-picture">
+              <img src="data:image/png;base64,{{ user.profileImage }}" alt="" class="rounded-circle gymprofilepic">
+            </div>
+            <h5 class="mt-3">{{ user.firstName }} {{ user.lastName }}</h5>
+          </div>
+        </div>
+  
+        <!-- Profile Details Column -->
+        <div class="col-md-8">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Profile Details</h5>
+              <ul class="list-unstyled">
+                <li><i class="fas fa-envelope"></i> Email: {{ user.email }}</li>
+                <li><i class="fas fa-phone"></i> Phone: {{ user.phone }}</li>
+                <li><i class="fas fa-user"></i> Role: {{ user.role }}</li>
+                <li><i class="fas fa-birthday-cake"></i> Age: {{ user.age }}</li>
+                <li><i class="fas fa-venus-mars"></i> Gender: {{ user.gender }}</li>
+                <li><i class="fas fa-weight"></i> Weight: {{ user.weight }} kg</li>
+                <li><i class="fas fa-ruler-vertical"></i> Height: {{ user.height }} cm</li>
+                <li><i class="fas fa-map-marker-alt"></i> Address: {{ user.address }}</li>
+              </ul>
+              <!-- "Show Profile" button with styling -->
+              <div class="text-center mt-3">  
+                <button type="button" (click)="direct(user.email)" class="btn btn-primary">Edit Profile</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

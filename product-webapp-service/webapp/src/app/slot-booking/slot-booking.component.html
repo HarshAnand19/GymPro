@@ -1,0 +1,106 @@
+<div class="fdiv">
+    <h1 class="Mainhead">Booking Details </h1>
+  </div>
+  
+  <div class="sdiv">
+    <button id="todayButton" (click)="toggleTodayBooking()">Show Today's Booking</button>
+    <button id="UpcomingButton" (click)="toggleUpcomingBooking()">Show Upcoming Booking</button>
+    <button id="ExpiredButton" (click)="toggleExpiredBooking()">Show Expired Booking</button>
+  </div>
+  
+  
+  
+  
+  <div id="todayBooking" class="hidden" *ngIf="showTodayBooking">
+    <div>
+      <div>
+        <div style="text-align: center;">
+          <h2>Todays Booking</h2>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8" *ngFor="let user of users">
+              <div class="card mb-8" *ngIf="isToday(user.slotDate)">
+                <div class="card-body">
+                  <p {{user}}></p>
+                  <h3 class="card-title"><strong>Slot Date {{ user.slotDate }}</strong></h3>
+                  <p class="card-text"><strong>Email </strong> {{ user.userEmail }}</p>
+                  <p class="card-text"><strong>Booking Date </strong> {{ user.bookingDate }}</p>
+                  <p class="card-text"><strong>Booking Status </strong>{{ user.bookingStatus }}</p>
+                  <!-- <p class="card-text"><strong>Booking ID: </strong>{{ user.bookingId }}</p>
+                  <p class="card-text"><strong>Slot ID: </strong>{{ user.slotId }}</p> -->
+                  <p class="card-text"><strong>Trainer Name </strong>{{ user.trainerName }}</p>
+                  <p class="card-text"><strong>Start Time </strong>{{ user.startTime }}</p>
+                  <p class="card-text"><strong>End Time </strong>{{ user.endTime }}</p>
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- <button id="UpcomingButton" (click)="toggleUpcomingBooking()">Show Upcoming Booking</button> -->
+  <div id="UpcomingBooking" class="hidden" *ngIf="showUpcomingBooking">
+    <div>
+      <div>
+        <div style="text-align: center;">
+          <h2>Upcoming Booking</h2>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8" *ngFor="let user of users">
+              <div class="card mb-8" *ngIf="isUpcoming(user.slotDate)">
+                <div class="card-body">
+                  <h3 class="card-title"><strong>Slot Date {{ user.slotDate }}</strong></h3>
+                  <p class="card-text"><strong>Email </strong> {{ user.userEmail }}</p>
+                  <p class="card-text"><strong>Booking Date </strong> {{ user.bookingDate }}</p>
+                  <p class="card-text"><strong>Booking Status </strong>{{ user.bookingStatus }}</p>
+                  <!-- <p class="card-text"><strong>Booking ID: </strong>{{ user.bookingId }}</p>
+                  <p class="card-text"><strong>Slot ID: </strong>{{ user.slotId }}</p> -->
+                  <p class="card-text"><strong>Trainer Name </strong>{{ user.trainerName }}</p>
+                  <p class="card-text"><strong>Start Time </strong>{{ user.startTime }}</p>
+                  <p class="card-text"><strong>End Time </strong>{{ user.endTime }}</p>
+  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <!-- <button id="ExpiredButton" (click)="toggleExpiredBooking()">Show Expired Booking</button> -->
+  <div id="ExpiredBooking" class="hidden" *ngIf="showExpiredBooking">
+    <div>
+      <div>
+        <div style="text-align: center;">
+          <h2>Expired Booking</h2>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-8" *ngFor="let user of users">
+              <div class="card mb-8" *ngIf="isExpired(user.slotDate)">
+                <div class="card-body">
+                  <h3 class="card-title"><strong>Slot Date {{ user.slotDate }}</strong></h3>
+                  <p class="card-text"><strong>Email </strong> {{ user.userEmail }}</p>
+                  <p class="card-text"><strong>Booking Date </strong> {{ user.bookingDate }}</p>
+                  <p class="card-text"><strong>Booking Status </strong>{{ user.bookingStatus }}</p>
+                  <!-- <p class="card-text"><strong>Booking ID: </strong>{{ user.bookingId }}</p>
+                  <p class="card-text"><strong>Slot ID: </strong>{{ user.slotId }}</p> -->
+                  <p class="card-text"><strong>Trainer Name </strong>{{ user.trainerName }}</p>
+                  <p class="card-text"><strong>Start Time </strong>{{ user.startTime }}</p>
+                  <p class="card-text"><strong>End Time </strong>{{ user.endTime }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

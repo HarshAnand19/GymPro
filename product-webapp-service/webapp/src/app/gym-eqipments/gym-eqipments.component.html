@@ -1,0 +1,74 @@
+<app-gym-data></app-gym-data>
+
+<div style="padding-top: 10px; padding-left:20px; text-align:center;padding-left:45%;">
+  <button class="nav-link" (click)="toggleForm()">Add Equipment</button>
+</div>
+
+<div class="formdiv" style="padding-left: 40%;">
+  <div class="container" *ngIf="showForm">
+    <!-- <h2 style="text-align: center;">Add Equipment</h2> -->
+    <form (submit)="addEquipment(this.equipmentData)" class="formdiv">
+      <div class="form-group">
+        <label for="trainerName">Name</label>
+        <input type="text" id="trainerName" class="form-control" [(ngModel)]="equipmentData.equipmentName" name="trainerName" required>
+      </div>
+      <div class="form-group">
+        <label for="trainerAddress">Details</label>
+        <input type="text" id="trainerAddress" class="form-control" [(ngModel)]="equipmentData.equipmentDetail" name="trainerAddress" required>
+      </div>
+      <div class="form-group">
+        <label for="trainerPhone">Status</label>
+        <input type="text" id="trainerPhone" class="form-control" [(ngModel)]="equipmentData.equipmentQualityStatus" name="trainerPhone" required>
+      </div>
+      <!-- <div class="form-group">
+        <label for="slotId">Slot ID</label>
+        <input type="text" id="slotId" class="form-control" [(ngModel)]="equipmentData.slotId" name="slotId" required>
+      </div> -->
+      <div class="form-group" style="text-align: center;">
+        <button type="submit" class="btn btn-primary">Add Trainer</button>
+
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ======================================= -->
+<div class="container" style="width: 100%;">
+  <div class="row" style="width: 100%;">
+    <div class="col-md-8" *ngFor="let gym of gymEquipments; let i=index" style="width: max-content;">
+      <div class="card-body" style="width: max-content;">
+        <div>
+          <h3 class="card-title"><strong> <i class="fa-solid fa-dumbbell"></i> {{ gym.equipmentName }}</strong></h3>
+          <p class="card-text"><strong><i class="bi bi-info-circle"></i> </strong> {{ gym.equipmentDetail }}</p>
+          <p class="card-text"><strong><i class="bi bi-check-circle"></i> </strong> {{ gym.equipmentQualityStatus }}</p>
+          <div style="display: inline-flex;">
+            <button (click)="toggleUpdateForm(i)"><i class="bi bi-pencil"></i> Update Equipment</button>
+            <span style="margin-left: 10px;"></span>
+            <button (click)="DeleteEquipment(gym.equipmentId)"><i class="bi bi-trash"></i> Delete</button>
+          </div>
+        </div>
+        
+        <!-- Details:
+        Status:
+        Name:  -->
+
+        <div *ngIf="gym.showUpdateForm">
+          <form (submit)="updateGymEquipments(i,gym)">
+            <label for="updateName">Name:</label>
+            <input type="text" id="updateName" [(ngModel)]="gym.equipmentName" name="updatedName" required>
+
+            <label for="updateDetail">Details:</label>
+            <input type="text" id="updateDetail" [(ngModel)]="gym.equipmentDetail" name="updatedDetail" required>
+
+            <label for="updateStatus">Status:</label>
+            <input type="text" id="updateStatus" [(ngModel)]="gym.equipmentQualityStatus" name="updatedStatus" required>
+
+            <button type="submit">Save</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,65 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-container-blue" style="background-image: url('/assets/gymimage/1.jpg');">
+              <h1 class="text-center" style="color: white;">Your chosen Subscription Plan</h1><br>
+              <h2 style="color: white;">Plan: {{ cardTitle }}</h2>
+              <div style="color: white;" [innerHTML]="cardText"></div>
+              <br>
+              <h3 style="color: white;">Price: ₹ {{ cardBasic }}</h3>
+            </div>
+          </div>
+        
+        <div class="col-md-6">
+            <div class="card card-container" style="background-color: rgb(70, 66, 66);">
+                <h3 class="text-center" style="color: white;" >Payment Details</h3>
+                <form name="form" (ngSubmit)="onSubmit()" #f="ngForm" novalidate>
+                    <div class="form-group">
+                        <div class="alert alert-danger" role="alert" *ngIf="error">Payment failed: {{ error }}</div>
+                        <div class="alert alert-success" role="alert" *ngIf="paymentId">Payment Success. Payment ID: {{ paymentId }}</div>
+                    </div>
+                    <div class="form-group">
+                        <label for="name" style="color: white;">Name</label>
+                        <!-- <input type="text" class="form-control" name="name" [(ngModel)]="form.name" required minlength="3" maxlength="20" #name="ngModel" /> -->
+                        <input type="text" class="form-control" name="name" [(ngModel)]="firstName" required minlength="3" maxlength="20" #name="ngModel" />
+                        <div class="alert alert-danger" *ngIf="f.submitted && name.invalid">
+                            Name is required and must be between 3 and 20 characters.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email" style="color: white;">Email</label>
+                        <!-- <input type="text" class="form-control" name="email" [(ngModel)]="form.email" required #email="ngModel" /> -->
+                        <input type="text" class="form-control" name="email" [(ngModel)]="userEmail" required #email="ngModel" />
+
+                        <div class="alert alert-danger" role="alert" *ngIf="f.submitted && email.invalid">Email is required!</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" style="color: white;">Phone</label>
+                        <!-- <input type="text" class="form-control" name="phone" [(ngModel)]="form.phone" required minlength="10" maxlength="10" #phone="ngModel" /> -->
+                        <input type="text" class="form-control" name="phone" [(ngModel)]="userPhone" required minlength="10" maxlength="10" #phone="ngModel" />
+
+                        <div class="alert alert-danger" role="alert" *ngIf="f.submitted && phone.invalid">
+                            Phone is required and must be 10 digits.
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="amount" style="color: white;">Amount</label>
+                        <input type="number" class="form-control" name="amount" [(ngModel)]="form.amount" required #amount="ngModel" [readonly]="true"/>
+                        <div class="alert alert-danger" role="alert" *ngIf="f.submitted && amount.invalid">
+                            Amount is required.
+                        </div>
+                    </div><br>
+                    <div class="form-group text-center">
+                        <button class="btn btn-purple btn-wide" style="color: white; background-color: rgb(19, 35, 205);">Proceed to Pay</button> 
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- <p style="color: black;"><strong>User Email:</strong> {{ userEmail }}</p>
+<p style="color: black;"><strong>Name:</strong> {{ firstName }}</p>
+<p style="color: black;"><strong>Phone :</strong> {{ userPhone }}</p> -->

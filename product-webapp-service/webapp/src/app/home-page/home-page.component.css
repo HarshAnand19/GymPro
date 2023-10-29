@@ -1,0 +1,8 @@
+/* navbar.component.css */
+
+.rounded-circle {
+    border-radius: 50%; /* This creates a circular shape */
+}
+.container{
+    background-color: aqua;
+}

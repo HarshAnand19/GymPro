@@ -1,0 +1,35 @@
+.card-title{
+background-color: #1F2833;
+ color: aqua;
+  border-radius: 4px;
+  text-align: center;
+  justify-content: center;
+font-family: 'Big Shoulders Stencil Display', cursive; ;
+font-family: 'Londrina Solid', cursive; border-radius: 12px; padding-left: 2vh; padding-right: 2vh;
+
+}
+.card-basic{
+    text-align: center;
+    justify-content: center;
+  font-family: 'Big Shoulders Stencil Display', cursive; ;
+  font-family: 'Londrina Solid', cursive; border-radius: 12px; padding-left: 2vh; padding-right: 2vh;
+}
+
+.card-text{
+    font-family: 'Big Shoulders Stencil Display', cursive; ;
+  font-family: 'Londrina Solid', cursive; border-radius: 12px; padding-left: 2vh; padding-right: 2vh;
+}
+
+.subs_plans_text{
+    font-weight: 200;
+    text-align: center;
+    justify-content: center;
+    font-family: 'Big Shoulders Stencil Display', cursive; ;
+    font-family: 'Londrina Solid', cursive; border-radius: 12px; padding-left: 2
+}
+
+.btn btn-info buy-button{
+    font-weight: bold;
+    font-family: 'Big Shoulders Stencil Display', cursive; ;
+    font-family: 'Londrina Solid', cursive; border-radius: 12px; padding-left: 2
+}

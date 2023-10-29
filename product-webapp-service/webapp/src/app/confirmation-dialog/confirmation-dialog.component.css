@@ -1,0 +1,47 @@
+/* Style the dialog title */
+.custom-dialog-title {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Style the dialog content */
+.custom-dialog-content {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+/* Style the dialog actions container */
+.custom-dialog-actions {
+  justify-content: flex-end;
+}
+
+/* Style the Cancel button */
+.custom-dialog-button.custom-dialog-cancel-button {
+  background-color: #d9534f; /* Red */
+  color: #fff;
+  margin-right: 10px;
+  padding: 10px 20px; /* Increase padding */
+  font-size: 18px; /* Increase font size */
+  border: #666;
+  border-radius:5px ;
+  -webkit-border-radius:5px ;
+  -moz-border-radius:5px ;
+  -ms-border-radius:5px ;
+  -o-border-radius:5px ;
+}
+
+/* Style the Confirm button */
+.custom-dialog-button.custom-dialog-confirm-button {
+  background-color: #5bc0de; /* Blue */
+  color: #fff;
+  padding: 10px 20px; /* Increase padding */
+  font-size: 18px; /* Increase font size */
+  border: #666;
+  border-radius:5px ;
+  -webkit-border-radius:5px ;
+  -moz-border-radius:5px ;
+  -ms-border-radius:5px ;
+  -o-border-radius:5px ;
+}

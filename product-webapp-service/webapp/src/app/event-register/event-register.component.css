@@ -1,0 +1,38 @@
+
+body{
+    background-color: lightblue;
+}
+h2 {
+    border: 2px solid black;
+    border-radius: 78px;
+    background-color: #00bbff36;
+    text-align: center;
+  }
+  .container{
+    width: 400px;
+  margin: auto;
+  padding: 20px;
+  box-shadow: 5px 5px 5px 5px #888888;
+  background-color: white;
+  border: 2px solid black;
+  border-radius: 20px;
+}
+input{
+    width: 100%;
+    height: 20px;
+    margin-bottom: 20px;
+}
+
+.text-danger{
+  color: red;
+}
+
+.event-register__register-button{
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}

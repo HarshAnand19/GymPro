@@ -1,0 +1,41 @@
+<div class="event-list container">
+  <h2 class="title">Upcoming Events</h2>
+  <div class="row">
+    <div class="col-md-4" *ngFor="let event of events">
+      <div class="card mb-4 custom-card">
+        <div class="card-header">
+          <h5 class="card-title"><strong>{{ event.eventName }}</strong></h5>
+        </div>
+        <div class="card-body custom-card-body">
+          <!-- Use Mat Icons -->
+          <p class="card-text">
+            <mat-icon>event</mat-icon> {{ event.eventDate | date:'yyyy-MM-dd' }}
+          </p>
+          <p class="card-text">
+            <mat-icon>location_on</mat-icon> {{ event.eventLocation }}
+          </p>
+          <!-- Display "Registration Begins" and "Registration Ends" in the same line -->
+          <div class="registration-dates">
+            <p class="card-text">
+              <mat-icon>event_available</mat-icon> <strong>Registration Begins</strong> {{ event.registrationBeginsDate | date:'yyyy-MM-dd' }}
+            </p>
+            <p class="card-text">
+              <mat-icon>event_busy</mat-icon> <strong>Registration Ends</strong> {{ event.registrationEndsDate | date:'yyyy-MM-dd' }}
+            </p>
+          </div>
+          <!-- Event Details Section -->
+          <div class="event-details">
+            <h3><strong>Details</strong></h3>
+            <p>{{ event.eventDetails }}</p>
+          </div>
+          <div>
+            <button class="event-list__register-button" (click)="registerForEvent(event.eventId)">Register</button>
+            <div class="alert alert-success" *ngIf="registrationStatus[event.eventId]">
+              Registered successfully
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

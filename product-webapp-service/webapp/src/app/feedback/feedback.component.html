@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">FEEDBACK FORM</h2>
+        <form (ngSubmit)="submitFeedback(feedbackForm)" #feedbackForm="ngForm">
+          <div class="mb-3">
+            <label for="emailId" class="form-label">Email:</label>
+            <input
+              type="email"
+              class="form-control"
+              id="emailId"
+              name="emailId"
+              [(ngModel)]="feedback.emailId"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              name="name"
+              [(ngModel)]="feedback.name"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Rating:</label> 
+            <div class="star-rating">
+              <span
+                *ngFor="let star of stars; let i = index"
+                class="star"
+                [class.filled]="i < selectedStars"
+                (click)="selectStars(i + 1)"
+              >
+                &#9733; <!-- Unicode star character -->
+              </span>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="feedback" class="form-label">Feedback:</label>
+            <textarea
+              class="form-control"
+              id="feedback"
+              name="feedback"
+              [(ngModel)]="feedback.feedback"
+              rows="4"
+              required
+            ></textarea>
+          </div>
+  
+          <div class="text-center"> <!-- Center the button within this div -->
+            <button routerLink="/" type="submit" class="btn btn-primary">Submit Feedback</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  

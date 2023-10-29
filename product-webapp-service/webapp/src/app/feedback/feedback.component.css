@@ -1,0 +1,24 @@
+.container{
+    margin-top: 100px;
+    width: 600px;
+}
+.card-title{
+    text-align: center;
+    justify-content: center;
+    font-weight: 400;
+}
+.star-rating {
+    display: inline-block;
+  }
+  
+  .star {
+    font-size: 22px;
+    cursor: pointer;
+    color: #ccc;
+  }
+  
+  .star.filled {
+    color: rgb(255, 187, 0); /* Color for filled stars */
+  }
+
+  

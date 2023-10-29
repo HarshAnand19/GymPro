@@ -1,0 +1,112 @@
+<!-- Home-Page Picture -->
+<div>
+    <img src="assets/gymimage/4.jpg" style="width: 100%; height: 920px;">
+</div>
+
+  <div style="z-index: 0; margin-top: 0; margin-bottom: 0;">
+
+    <!-- Marquee -->
+    <marquee direction="left" style="background-color: #1F2833; margin: 0; padding: 0;">
+        <p style="color: goldenrod; border-radius: 5px;"><strong>REGISTER NOW AND GET 7 DAYS FREE TRIAL!</strong></p>
+    </marquee>
+</div>
+
+<!-- About -->
+<div class="p-5" style="background-color: #1F2833;">
+    <div class="col-sm-8 mx-auto" style="background-color: #1F2833;">
+        <h1 style="color: rgb(255, 187, 0); font-family: 'Big Shoulders Stencil Display', cursive; font-family: 'Londrina Solid', cursive;">ABOUT GYMPRO</h1>
+        <p style="color: #c5c6c7;">
+            Whether you’re a first-time gym user or a veteran member, 
+            we’re here to provide a workout environment in which anyone - and everyone - 
+            can be comfortable. No matter what you’re looking for in a gym, we’ve got a membership option made for you. The GymPro Fitness members enjoy unlimited access to the gym facilities and the support of our friendly, knowledgeable staff anytime you need it.
+        </p>
+    </div>
+</div>
+
+<!-- Activities offered -->
+<div style="background-color: #1F2833;" class="abus">
+    <div class="card-group" style="background-color: #1F2833; margin: 1vw;" >
+      <div class="card" style="background-color: #1F2833; margin: 1vh; border-radius: 12px;">
+        <img src="assets/gymimage/workoutboth.jpg" class="card-img-top" alt="..." style="border-radius: 12px;height: 320px;">
+        <div class="card-body" style="background-color: #1F2833;">
+          <h5 class="card-title" style="font-family: 'Big Shoulders Stencil Display', cursive;
+          font-family: 'Londrina Solid', cursive; color:rgb(255, 187, 0); display: flex; justify-content: center;"> Perfect for both genders </h5>
+          <p class="card-text" style="color: #c5c6c7;  display: flex; justify-content: center;">Our Unisex gym offers best class facilities for both male and female members.</p>
+        </div>
+      </div>
+      <div class="card" style="background-color: #1F2833; margin: 1vh; border-radius: 12px;">
+        <img src="assets/slide/slide12.jpg" class="card-img-top" alt="..." style="border-radius: 12px;">
+        <div class="card-body" style="background-color: #1F2833;">
+          <h5 class="card-title" style="font-family: 'Big Shoulders Stencil Display', cursive;
+          font-family: 'Londrina Solid', cursive; color:rgb(255, 187, 0); display: flex; justify-content: center;">Outdoor Programs</h5>
+          <p class="card-text" style="color: #c5c6c7;  display: flex; justify-content: center;">We conduct outdoor programs every week , at free of cost.</p>
+        </div>
+      </div>
+      <div class="card" style="background-color: #1F2833; margin: 1vh; border-radius: 12px; ">
+        <img src="assets/slide/slide13.jpg" class="card-img-top" alt="..." style="border-radius: 12px;">
+        <div class="card-body" style="background-color: #1F2833; border-radius: 12px;">
+          <h5 class="card-title" style="font-family: 'Big Shoulders Stencil Display', cursive;
+          font-family: 'Londrina Solid', cursive; color: rgb(255, 187, 0); display: flex; justify-content: center;">Personal Training Program</h5>
+          <p class="card-text" style="color: #c5c6c7;  display: flex; justify-content: center;">We have best coaches from each field to train you the best .</p>
+        </div>
+      </div>
+    </div>
+  </div>  
+
+  <!-- Take Membership -->
+  <div class="p-5" style="background-color: #081625">
+    <div class="row">
+      <div class="col-sm-8 mx-auto text-left" style="background-color: #081625;">
+        <h1 style="color: rgb(255, 187, 0); font-family: 'Big Shoulders Stencil Display', cursive; font-family: 'Londrina Solid', cursive;">WANT TO JOIN THE HUSTLE ?</h1>
+        <img src="assets/gymimage/mebership.jpg" alt="Membership Image" class="img-fluid" style="width: 100%;" />
+        <p style="color: #c5c6c7;">
+          Whether you’re a first-time gym user or a veteran member, we’re here to provide a workout environment in which anyone - and everyone - can be comfortable. No matter what you’re looking for in a gym, we’ve got a membership option made for you. The GymPro Fitness members enjoy unlimited access to the gym facilities and the support of our friendly, knowledgeable staff anytime you need it.
+        </p>
+        <button *ngIf="user && user.role === 'user'" class="btn btn-primary" style="background-color: rgb(255, 187, 0);color: black;"  [routerLink]="['/subscription-service']"
+        [queryParams]="{ firstName: user.firstName, 
+            email: user.email, 
+            phone: user.phone }" >Join Now</button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Trainers -->
+<div style="background-color: #1F2833;" class="abus">
+  <h1 style="font-family: 'Big Shoulders Stencil Display', cursive;
+  font-family: 'Londrina Solid', cursive; color:rgb(255, 187, 0); display: flex; justify-content: center;">Our Trainers</h1>
+
+  <div class="card-group" style="background-color: #1F2833; margin: 1vw;">
+    <div class="card" *ngFor="let trainer of trainers" style="background-color: #1F2833; margin: 1vh; border-radius: 12px;">
+      <div class="card-body" style="background-color: rgb(255, 187, 0);">
+        <h4 class="card-title" style="font-family: 'Big Shoulders Stencil Display', cursive;
+        font-family: 'Londrina Solid', cursive; color:black; display: flex; justify-content: center;"> Name : {{ trainer.trainerName }} </h4>
+        <h5 class="card-text" style="color: black; display: flex; justify-content: center;"> Address : {{ trainer.trainerAddress }} </h5>
+        <h5 class="card-text" style="color: black; display: flex; justify-content: center;"> Phone No. :{{ trainer.trainerPhone }} </h5>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- List of Equipments -->
+<div style="background-color: #1F2833;" class="abus">
+  <h1 style="font-family: 'Big Shoulders Stencil Display', cursive;
+  font-family: 'Londrina Solid', cursive; color:rgb(255, 187, 0); display: flex; justify-content: center;">Our Equipments</h1>
+
+  <div class="card-group" style="background-color: #1F2833; margin: 1vw;">
+    <div class="card" *ngFor="let equipment of equipments" style="background-color: #1F2833; margin: 1vh; border-radius: 12px;">
+      <div class="card-body" style="background-color: rgb(255, 187, 0);">
+        <h5 class="card-title" style="font-family: 'Big Shoulders Stencil Display', cursive;
+        font-family: 'Londrina Solid', cursive; color:black; display: flex; justify-content: center;"> Equiment : {{ equipment.equipmentName }} </h5>
+        <h6 class="card-text" style="font-family: 'Big Shoulders Stencil Display', cursive;
+        font-family: 'Londrina Solid', cursive; color:black; display: flex; justify-content: center;">Description : {{ equipment.equipmentDetail }} </h6>
+        <h4 class="card-text" style="color: black; display: flex; justify-content: center;">Status : {{ equipment.equipmentQualityStatus }} </h4>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Back to Top -->
+<button id="scrollTopButton" (click)="scrollToTop()" title="Go to top">
+  <img src="assets/gymimage/uparrow.png" alt="Up Arrow Image">
+</button>

@@ -1,0 +1,82 @@
+.card.mb-8{
+    /*background:#d08f49bf;
+    color: rgb(10, 10, 10);
+    */padding: 10px;
+    border: 2px solid #000;
+    margin: 10px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+  }
+  
+  .row{
+    display: inline-flex;
+    
+  }
+  
+  
+  .card-title{
+    text-align: center;
+  }
+  
+  
+  .fdiv{
+    text-align: center;
+    background: #1f82c1df;
+  }
+  
+  .Mainhead{
+    text-decoration: solid;
+  }
+  
+  
+  .container {
+    background-color: #f0f0f0; /* Background color for the entire container */
+  }
+  
+  .card {
+    background-color: #fff; /* Background color for each card */
+    color: #333; /* Text color for card content */
+    border: 1px solid #ddd; /* Add a subtle border to the card */
+    margin-bottom: 20px; /* Spacing between cards */
+  }
+  
+  .card-title {
+    color: #007bff; /* Color for the card title */
+  }
+  
+  .card-text {
+    color: #555; /* Color for the card text */
+  }
+  
+  
+  
+  
+  
+  /* .hidden {
+    display: none;
+  } */
+  
+  /* Style for the buttons */
+  button {
+    background-color: #007bff; /* Blue background color */
+    color: #fff; /* White text color */
+    padding: 10px 20px; /* Padding for the buttons */
+    border: none; /* Remove button borders */
+    cursor: pointer; /* Cursor style on hover */
+    margin: 5px; /* Margin between buttons */
+    border-radius: 5px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+  }
+  
+  /* Style for the buttons on hover */
+  button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+  }
+  
+  
+  .sdiv{
+    text-align: center;
+  }

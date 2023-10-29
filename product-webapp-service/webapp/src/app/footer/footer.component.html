@@ -1,0 +1,63 @@
+<footer class="footer" style="padding-top: 25px;">
+    <div class="container">
+        <div class="row contactus_section">
+            <div class="col-12 text-center">
+                <h1 class="contactus_text">Contact Us</h1>
+            </div>
+        </div>
+      <div class="row">
+        <div class="col-md-4">
+
+            <div style="display: flex; align-items: center;">
+                <img src="assets/gymimage/logo.jpeg" alt="" width="50px" height="50px" style="border-radius: 50%;margin-right: 15px;">
+                <h3 class="gympro_text" style="color: rgb(255, 187, 0);">GymPro</h3>
+            </div>
+            
+           
+           <p>100 New Street, Hyderabad, Telangana</p>
+          <p>Email: gympro@example.com</p>
+          <p>Phone: +123-456-7890</p>
+          <img src="assets/social/fblogo.png" alt="Gym logo" width="35px" height="35px"  style="margin-right: 10px;">
+          <img src="assets/social/instagram.png" alt="Gym logo" width="40px" height="40px" style="margin-right: 10px;">
+          <img src="assets/social/whatsapp.png" alt="Gym logo" width="35px" height="35px" style="margin-right: 10px;">
+          <img src="assets/social/twitter.png" alt="Gym logo" width="40px" height="40px" style="margin-right: 10px;">
+        </div> 
+
+        <div class="col-md-4">
+            <h3 class="quicklinks_text" style=" color: rgb(255, 187, 0);">Quick Links</h3> 
+            <p><a href="" class="link">Home</a></p>
+            <p><a  [routerLink]="['/subscription-service']"
+              [queryParams]="{ firstName: user.firstName, 
+                  email: user.email, 
+                  phone: user.phone }" class="link">Subscription</a></p>
+            <p><a href="" class="link">Events</a></p>
+            <p><a href="" class="link">Profile</a></p>
+         </div>  
+
+         <div class="col-md-4">
+          <h2 class="news_letter">News Letter</h2>
+          <p class="newsletter__text">
+            Subscribe to our news letter to get all the latest updates from our website !!
+          </p><br>
+          <form class="newsletter__input">
+            <input type="text" class="form" placeholder="example@email.com" style="margin-right: 3px;" />
+            <button type="button" class="send-button">
+                <img src="assets/social/yellowarrow.png" alt="send icon" class="send-icon" width="30" height="30" />
+            </button>
+                      </form>
+         </div>
+
+         <div class="row contactus_section">
+            <div class="col-12 text-center">
+           
+            </div>
+        </div>
+         <div class="legel">
+            <p class="text" style="text-align: center;justify-content: center;">Copyright &copy; by GymPro&nbsp;</p>
+          </div>
+      </div>
+      
+    </div>
+
+  </footer>
+  

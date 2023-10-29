@@ -1,0 +1,65 @@
+<app-header></app-header>
+<div class="container mt-5">
+  <div class="card">
+    <div class="card-header">
+      <h2 class="text-center">Create a Slot</h2>
+    </div>
+    <div class="card-body">
+      
+      <form (ngSubmit)="createSlot()" #slotForm="ngForm">
+        <!-- Warning Messages -->
+        <div class="alert alert-warning" *ngIf="isInvalidDateTime">
+          Invalid date/time selection. Please check the date and time.
+        </div>
+        <div class="alert alert-warning" *ngIf="isEndTimeEarlier">
+          End time must not be earlier than start time.
+        </div>
+
+        <!-- Form Fields -->
+        <div class="form-group">
+          <label for="slotName">Slot Name</label>
+          <input type="text" id="slotName" name="slotName" class="form-control" [(ngModel)]="slot.slotName" required>
+        </div>
+
+        <div class="form-group">
+          <label for="trainerName">Trainer Name</label>
+          <select id="trainerName" name="trainerName" class="form-control" [(ngModel)]="slot.trainerName" (change)="onTrainerSelect()" required>
+            <option value="" disabled>Select Trainer</option>
+            <option *ngFor="let trainer of trainers" [value]="trainer.trainerName">{{ trainer.trainerName }}</option>
+          </select>
+        </div>
+
+        <!-- Display Trainer ID -->
+        <div class="form-group">
+          <label for="trainerId">Trainer ID</label>
+          <input type="text" id="trainerId" name="trainerId" class="form-control"  [value]="selectedTrainer.trainerId" [(ngModel)]="selectedTrainer.trainerId" disabled>
+        </div>
+
+        <div class="form-group">
+          <label for="slotDate">Slot Date</label>
+          <input type="date" id="slotDate" name="slotDate" class="form-control" [(ngModel)]="slot.slotDate" required>
+        </div>
+
+        <div class="form-group">
+          <label for="startTime">Start Time</label>
+          <input type="time" id="startTime" name="startTime" class="form-control" [(ngModel)]="slot.startTime" required>
+        </div>
+
+        <div class="form-group">
+          <label for="endTime">End Time</label>
+          <input type="time" id="endTime" name="endTime" class="form-control" [(ngModel)]="slot.endTime" required>
+        </div>
+
+        <div class="form-group">
+          <label for="personsAllowed">Persons Allowed</label>
+          <input type="number" id="personsAllowed" name="personsAllowed" class="form-control" [(ngModel)]="slot.personsAllowed" required>
+        </div>
+
+        <div class="text-center" >
+          <button type="submit" class="btn btn-primary" [disabled]="!slotForm.valid">Create Slot</button><br><br>
+          <a  routerLink="/admin/slotPanel" class="btn btn-secondary">Go to Slot Panel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

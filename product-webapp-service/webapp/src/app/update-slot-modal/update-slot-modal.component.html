@@ -1,0 +1,45 @@
+<div class="modal" [class.show]="showModal">
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title">Update Slot</h5>
+              <button type="button" class="close" (click)="closeModal()">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              
+              <div class="form-group">
+                  <label for="slotName">Slot Name</label>
+                  <input type="text" id="slotName" name="slotName" class="form-control" [(ngModel)]="slot.slotName" placeholder="Slot Name">
+              </div>
+              <div class="form-group">
+                <label for="trainerName">Trainer Name</label>
+                <select id="trainerName" name="trainerName" class="form-control" [(ngModel)]="slot.trainerName" (change)="onTrainerSelect()" required>
+                  <option value="" disabled>Select Trainer</option>
+                  <option *ngFor="let trainer of trainers" [value]="trainer.trainerName">{{ trainer.trainerName }}</option>
+                </select>
+              </div>
+              <div class="form-group">
+                  <label for="slotDate">Slot Date</label>
+                  <input type="date" id="slotDate" name="slotDate" class="form-control" [(ngModel)]="slot.slotDate">
+              </div>
+              <div class="form-group">
+                  <label for="startTime">Start Time</label>
+                  <input type="time" id="startTime" name="startTime" class="form-control" [(ngModel)]="slot.startTime">
+              </div>
+              <div class="form-group">
+                  <label for="endTime">End Time</label>
+                  <input type="time" id="endTime" name="endTime" class="form-control" [(ngModel)]="slot.endTime">
+              </div>
+              <div class="form-group">
+                  <label for="personsAllowed">Persons Allowed</label>
+                  <input type="number" id="personsAllowed" name="personsAllowed" class="form-control" [(ngModel)]="slot.personsAllowed">
+              </div>
+              
+            <br>
+              <button class="btn btn-primary" (click)="validateTime()" (click)="onDoneClick()">Update</button>
+          </div>
+      </div>
+  </div>
+</div>

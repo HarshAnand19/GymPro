@@ -1,0 +1,86 @@
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header styles */
+.title {
+  text-align: center;
+  margin-top: 20px;
+  background-color: #333;
+  color: #ddd;
+  padding: 10px;
+}
+
+/* Event list styles */
+.event-list {
+  padding: 20px;
+}
+
+/* Row styles */
+.row {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* Card styles */
+.custom-card {
+  border: 2px solid #000;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 15px;
+  background-color: #fff;
+  color: #333;
+  max-width: 450px;
+}
+
+.card-title {
+  color: black;
+  text-align: center;
+  font-size: 20px;
+}
+
+/* Icon styles */
+mat-icon {
+  margin-right: 5px; /* Add some spacing between the icon and text */
+  color: blueviolet;
+}
+
+/* Card text styles */
+.card-text {
+  color: #555;
+  display: flex;        /* Align icon and text horizontally */
+  align-items: center;  /* Center vertically */
+  margin-right: 5px;    /* Add some spacing between the icon and text */
+}
+
+/* Registration dates styles */
+.registration-dates {
+  color: #000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;     /* Add spacing between the dates and other content */
+}
+
+/* Event details styles */
+.event-details {
+  font-size: 18px;
+}
+
+.event-list__register-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.event-list__register-button:hover {
+  background-color: #0056b3;
+}
